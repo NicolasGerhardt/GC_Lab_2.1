@@ -23,7 +23,7 @@ namespace GC_Lab_2._1
 
                 string roomSize;
 
-                if (area <= 250)
+                if (area > 0 || area <= 250)
                 {
                     roomSize = "small.";
                 }
@@ -37,7 +37,7 @@ namespace GC_Lab_2._1
                 }
                 else
                 {
-                    roomSize = "undefined!!!";
+                    roomSize = "undefined!!! How dare you try to confuse me human!";
                 }
 
                 Console.WriteLine($"This room's perimeter is {perimeter} feet long.");
