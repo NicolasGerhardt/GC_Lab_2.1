@@ -46,23 +46,24 @@ namespace GC_Lab_2._1
                 Console.WriteLine($"This room is {roomSize}");
 
                 Console.Write("Give us more rooms to... measure? (y/n) ");
-            getYesNo:
-                ConsoleKeyInfo answer = Console.ReadKey();
+                bool haveValidAnswer = false;
+                ConsoleKeyInfo answer;
+                do
+                {
+                    answer = Console.ReadKey();
+
+                    if (answer.KeyChar == 'y' || answer.KeyChar == 'n')
+                    {
+                        haveValidAnswer = true;
+                    }
+                } while (!haveValidAnswer);
+
                 Console.WriteLine();
 
-                if (answer.KeyChar == 'y')
-                {
-                    continue;
-                }
-                else if (answer.KeyChar == 'n')
+                if (answer.KeyChar == 'n')
                 {
                     break;
                 }
-                else
-                {
-                    goto getYesNo;
-                }
-
 
             }
 
